@@ -1,0 +1,133 @@
+{
+  "identity": {
+    "name": "E1",
+    "persona": "Anti-AI Designer",
+    "mission": "Create unique, emotionally directed designs that break category conventions.",
+    "principles": [
+      "Fusion over Imitation",
+      "Emotion First",
+      "Content is king",
+      "Zoom in",
+      "Negative Space",
+      "Contrast"
+    ]
+  },
+  "project": {
+    "name": "Complexo Imobiliário e Turístico Monte Verde Invitation",
+    "type": "Digital Invitation / Landing Page",
+    "aesthetic": "Quiet Luxury, Organic, Sophisticated",
+    "context": "Mobile-first experience for high-net-worth individuals"
+  },
+  "typography": {
+    "primary": {
+      "name": "Fira Sans",
+      "usage": "Main text, Headings (User Constraint)",
+      "weights": ["300", "400", "500"],
+      "instructions": "Use Fira Sans. For Headings, use Light (300) weight with tight tracking (tracking-tight) for a modern look, OR Uppercase with wide tracking (tracking-[0.2em]) for a premium label feel. Avoid standard Bold (700)."
+    },
+    "secondary": {
+      "name": "Playfair Display",
+      "usage": "Optional accents (Dates, 'You are invited')",
+      "instructions": "Use sparingly for emotional impact if Fira Sans feels too sterile."
+    }
+  },
+  "colors": {
+    "palette": {
+      "deep_green": "#2D4A2D",
+      "moss_green": "#6B7B3A",
+      "sand": "#D4C5A0",
+      "mustard": "#C4973B",
+      "dark_brown": "#3E2B1C",
+      "white": "#FFFFFF",
+      "off_white": "#F9F8F4"
+    },
+    "usage": {
+      "background": "#2D4A2D (Hero/Dark sections) or #D4C5A0 (Light sections)",
+      "text_primary": "#F9F8F4 (on dark) or #2D4A2D (on light)",
+      "text_accent": "#C4973B (Gold/Mustard for luxury highlights)",
+      "cta_primary": "#F9F8F4 (text) on #2D4A2D (bg) or #6B7B3A",
+      "cta_secondary": "Transparent with #2D4A2D border"
+    }
+  },
+  "layout_strategy": {
+    "type": "Mobile-First Story",
+    "grid": "Single column (col-span-1), full viewport height sections (min-h-screen)",
+    "spacing": "Generous padding (p-8, p-12) to create breathing room.",
+    "sections": [
+      {
+        "name": "Stage 1: The Hook (Hero)",
+        "elements": [
+          "Video Background (or Fallback Image)",
+          "Overlay: Black/Green gradient (from bottom) to ensure text readability",
+          "Logo: Centered, top third",
+          "Headline: 'Você está convidado para um marco em Monte Verde' (Centered, Elegant)"
+        ]
+      },
+      {
+        "name": "Stage 2: The Desire (Details)",
+        "elements": [
+          "Background: Solid Deep Green or Blurred Glass over texture",
+          "Content: Date (21/03), Time (15h), Location (Fazenda da Mata)",
+          "Typography: Large numbers for Date/Time. Elegant layout."
+        ]
+      },
+      {
+        "name": "Stage 3: The Action (CTA)",
+        "elements": [
+          "Buttons: Stacked vertically.",
+          "Primary: 'Confirmar Presença' (WhatsApp)",
+          "Secondary: 'Como Chegar' (Google Maps)",
+          "Footer: Minimal branding"
+        ]
+      }
+    ]
+  },
+  "visual_enhancers": {
+    "textures": "Use a subtle noise overlay (opacity 5%) or the 'Paper Texture' image as a background for the card to avoid digital flatness.",
+    "glassmorphism": "Use 'backdrop-blur-md' with 'bg-black/20' or 'bg-white/10' for text containers over the video.",
+    "shadows": "Soft, ambient shadows. shadow-2xl for floating elements.",
+    "borders": "1px solid border-white/20 for glass cards."
+  },
+  "motion": {
+    "scroll": "Lenis (Smooth Scrolling) is MANDATORY.",
+    "animations": "Framer Motion. Fade in up (y: 20 -> 0, opacity: 0 -> 1) with stagger for text. Parallax effect on background image."
+  },
+  "assets": {
+    "images": [
+      {
+        "category": "hero_fallback",
+        "url": "https://images.unsplash.com/photo-1758781102552-b6ed66cbafe3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxtaXN0eSUyMG1vdW50YWluJTIwcGluZSUyMGZvcmVzdCUyMGNpbmVtYXRpYyUyMGZvZ3xlbnwwfHx8fDE3NzE5NjU3NjV8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Misty forest with sunbeams (Warmth/Nature)"
+      },
+      {
+        "category": "texture",
+        "url": "https://images.pexels.com/photos/5993559/pexels-photo-5993559.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Beige paper texture for cards/backgrounds"
+      },
+      {
+        "category": "logo",
+        "url": "https://customer-assets.emergentagent.com/job_32aff93b-21a6-449c-8699-e871ad5b9dbf/artifacts/6yez64l7_97af9554-cb1c-4de8-8194-773b304d456b.jpg",
+        "description": "Client Logo"
+      }
+    ]
+  },
+  "component_instructions": {
+    "buttons": "Pill shaped (rounded-full). Height h-12 or h-14. Text uppercase tracking-widest text-sm.",
+    "cards": "If using cards, use the Paper Texture as background with a 1px border-gold/30.",
+    "typography": "Always ensure contrast. If background is video, use text-shadow-sm."
+  },
+  "universal_guidelines": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms.",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; }",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations",
+    "NEVER: use AI assistant Emoji characters",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN"
+  ],
+  "instructions_to_main_agent": "1. Set up Lenis scroll. 2. Build the 3 sections as full-screen scroll snaps or just long scroll. 3. Use the Video Background if available (mock it with the fallback image). 4. Implement the WhatsApp and Maps buttons with real href links (wa.me and maps.google.com). 5. Ensure the design feels 'Quiet Luxury' - minimal, expensive, nature-connected."
+}

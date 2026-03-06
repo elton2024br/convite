@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #2D4A2D;
+  color: #F9F8F4;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@layer base {
+  :root {
+    --background: 120 24% 23%;
+    --foreground: 45 33% 96%;
+    --card: 120 24% 23%;
+    --card-foreground: 45 33% 96%;
+    --popover: 120 24% 23%;
+    --popover-foreground: 45 33% 96%;
+    --primary: 39 54% 51%;
+    --primary-foreground: 45 33% 96%;
+    --secondary: 73 36% 35%;
+    --secondary-foreground: 45 33% 96%;
+    --muted: 120 24% 30%;
+    --muted-foreground: 43 28% 76%;
+    --accent: 39 54% 51%;
+    --accent-foreground: 45 33% 96%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 120 24% 30%;
+    --input: 120 24% 30%;
+    --ring: 39 54% 51%;
+    --chart-1: 120 24% 23%;
+    --chart-2: 73 36% 35%;
+    --chart-3: 43 28% 76%;
+    --chart-4: 39 54% 51%;
+    --chart-5: 20 38% 18%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  [data-debug-wrapper="true"] {
+    display: contents !important;
+  }
+
+  [data-debug-wrapper="true"] > * {
+    margin-left: inherit;
+    margin-right: inherit;
+    margin-top: inherit;
+    margin-bottom: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
+    column-gap: inherit;
+    row-gap: inherit;
+    gap: inherit;
+    border-left-width: inherit;
+    border-right-width: inherit;
+    border-top-width: inherit;
+    border-bottom-width: inherit;
+    border-left-style: inherit;
+    border-right-style: inherit;
+    border-top-style: inherit;
+    border-bottom-style: inherit;
+    border-left-color: inherit;
+    border-right-color: inherit;
+    border-top-color: inherit;
+    border-bottom-color: inherit;
+  }
+}
+
+/* Selection color */
+::selection {
+  background: rgba(196, 151, 59, 0.3);
+  color: #F9F8F4;
+}
