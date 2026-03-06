@@ -226,6 +226,16 @@ const DetailsSection = () => {
 };
 
 const AttractionSection = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const handlePlayClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
   return (
     <AnimatedSection className="attraction-section" data-testid="attraction-section">
       {(isInView) => (
@@ -255,11 +265,23 @@ const AttractionSection = () => {
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.9, delay: 0.3 }}
             >
+              {!isPlaying && (
+                <div className="custom-play-overlay" onClick={handlePlayClick}>
+                  <div className="custom-play-button">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+              )}
               <video
+                ref={videoRef}
                 src={ATTRACTION_VIDEO}
-                controls
+                controls={isPlaying}
                 playsInline
                 className="attraction-video"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
               />
             </motion.div>
           </div>
